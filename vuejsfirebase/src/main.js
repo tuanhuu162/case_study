@@ -4,8 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VueFire from 'vuefire'
+// import Vuetify from 'vuetify'
 
 Vue.use(VueFire)
+Vue.use(Vuetify)
+Vue.use(VueFirestore);
 
 Vue.config.productionTip = false
 

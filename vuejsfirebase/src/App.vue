@@ -1,28 +1,51 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+  <div id="app" class="container">
+    <div class="pagepheader">
+      <h1> Vue.js2 </h1>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>Books list</h3>
+      </div>
+      <div class="panel-body">
+        <table class="table table-striped">
+          <thread>
+            <tr>
+              <th>
+                Title
+              </th>
+              <th>
+                Author
+              </th>
+            </tr>
+          </thread>
+
+          <tbody>
+            <tr v-for="book in books">
+              <td>
+                <a v-bind:href="book.url">{{book.title}}</a>
+              </td>
+              <td>
+                {{book.author}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-let config = {
-  apiKey: "AIzaSyBfebo3lPIg8g82w7Zl_YNYYXDGw3unqpw",
-  authDomain: "teko-449de.firebaseapp.com",
-  databaseURL: "https://teko-449de.firebaseio.com",
-  projectId: "teko-449de",
-  storageBucket: "teko-449de.appspot.com",
-  messagingSenderId: "257324425236"
-}
-let app = FireBase.initializeApp(config);
-let db = app.database();
 
-let bookRef = db.ref('books');
+import { db } from './static/firebase'
 
 export default {
   name: 'app',
-  firbase:{
-    books: booksRef
+  data() {
+    return{
+      
+    }
   }
 }
 </script>
